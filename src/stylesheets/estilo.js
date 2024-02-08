@@ -21,13 +21,24 @@ const estilos = StyleSheet.create({
   },
 
   viewBotoes: {
-    backgroundColor: "orange",
     flex: 2,
     flexDirection: "row",
     alignItems: "flex-start",
     width: "80%",
     justifyContent: "space-evenly",
   },
+
+  botao: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#5451a6",
+  },
+
+  textoBotao: {
+    color: "#fff",
+  },
+
   viewRodape: {
     width: "80%",
     backgroundColor: "red",

@@ -23,11 +23,11 @@ export default function App() {
           <Text>Dá Hora Filmes!</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Pressable onPress={() => console.log("Oi")}>
-            <Text>Buscar Filmes</Text>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
           </Pressable>
-          <Pressable>
-            <Text>Favoritos</Text>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Favoritos</Text>
           </Pressable>
         </View>
         <View style={estilos.viewRodape}>

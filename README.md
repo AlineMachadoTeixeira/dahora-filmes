@@ -48,6 +48,14 @@ Npx significa  instalar e executar
 - ctrl C
 - para voltar `npm start` e a letra `a`
 
+#### Biblioteca de icons
+
+- https://docs.expo.dev/guides/icons/
+- faz a instalação no terminal node. Antes pare se tiver rodando
+- npm install @expo/vector-icons
+
+- site de icons https://icons.expo.fyi/Index
+
 # DaHora Filmes
 
 Exemplo de app nativo multiplataforma criando com React Native e Expo.

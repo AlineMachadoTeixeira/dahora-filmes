@@ -1,11 +1,14 @@
 /* rnfs escola esse antes de começar  e tire alguma coisas e mude outras */
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <>
+      <StatusBar barStyle="light-content" />
+      <SafeAreaView>
+        <Text>App</Text>
+      </SafeAreaView>
+    </>
   );
 }
 

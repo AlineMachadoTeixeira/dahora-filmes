@@ -55,3 +55,5 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
+
+https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0

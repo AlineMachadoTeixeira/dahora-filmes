@@ -1,12 +1,7 @@
 /* rnfs escola esse antes de começar  e tire alguma coisas e mude outras */
-import {
-  Button,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Button, SafeAreaView, StatusBar, Text, View } from "react-native";
+
+import estilos from "./src/stylesheets/estilo";
 
 export default function App() {
   return (
@@ -28,5 +23,3 @@ export default function App() {
     </>
   );
 }
-
-const estilos = StyleSheet.create({});

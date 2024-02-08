@@ -47,3 +47,11 @@ Npx significa  instalar e executar
 
 - ctrl C
 - para voltar `npm start` e a letra `a`
+
+# DaHora Filmes
+
+Exemplo de app nativo multiplataforma criando com React Native e Expo.
+
+## Dica
+
+Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes

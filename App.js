@@ -9,7 +9,7 @@ export default function App() {
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={estilos.container}>
         <View style={estilos.viewLogo}>
-          <Text>Dá Hora Filmes</Text>
+          <Text>Dá Hora Filmes!</Text>
         </View>
         <View style={estilos.viewBotoes}>
           <Button title="Buscar Filmes" />

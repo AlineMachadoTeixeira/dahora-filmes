@@ -20,6 +20,12 @@ const estilos = StyleSheet.create({
     height: 128,
   },
 
+  titulo: {
+    fontFamily: "Monoton-Regular",
+    fontSize: 28,
+    color: "#5a51a6",
+  },
+
   viewBotoes: {
     flex: 2,
     flexDirection: "row",

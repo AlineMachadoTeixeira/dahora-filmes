@@ -56,6 +56,14 @@ Npx significa  instalar e executar
 
 - site de icons https://icons.expo.fyi/Index
 
+- site para fontes https://docs.expo.dev/versions/latest/sdk/font/
+- sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
+
+#### Fonte
+
+- Para fonte precisa instalar no node.js - npx expo install expo-font
+- e para usar precisa instalar - npx expo install expo-splash-screen
+
 # DaHora Filmes
 
 Exemplo de app nativo multiplataforma criando com React Native e Expo.

@@ -30,10 +30,19 @@ export default function App() {
             </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>
-              <Ionicons name="star" size={12} color="white" />
-              Favoritos
-            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: 5,
+              }}
+            >
+              <Text style={estilos.textoBotao}>
+                <Ionicons name="star" size={12} color="gold" />
+                Favoritos
+              </Text>
+            </View>
           </Pressable>
         </View>
         <View style={estilos.viewRodape}>

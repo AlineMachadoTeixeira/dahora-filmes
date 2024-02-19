@@ -1,4 +1,4 @@
-//atalho: rnfs
+//atalho: rnfs -- para isso instalar a intenção  ES7+ React/Redux/React-Native snippets
 import { SafeAreaView, StyleSheet } from "react-native";
 
 import { useFonts } from "expo-font"; /* Para fonte */

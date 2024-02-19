@@ -16,8 +16,8 @@ const estilos = StyleSheet.create({
   },
 
   logo: {
-    width: 128,
-    height: 128,
+    width: 144,
+    height: 144,
   },
 
   titulo: {
@@ -35,8 +35,6 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
-    borderStyle: "solid",
-    borderWidth: 2,
     padding: 16,
     backgroundColor: "#5451a6",
   },
@@ -49,12 +47,16 @@ const estilos = StyleSheet.create({
   },
 
   viewRodape: {
-    width: "80%",
-    backgroundColor: "red",
+    width: "100%",
+    backgroundColor: "#5451a6",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+
+  botaoRodape: {
+    padding: 16,
   },
 });
 

@@ -74,10 +74,21 @@ Npx significa  instalar e executar
 
 Exemplo de app nativo multiplataforma criando com React Native e Expo.
 
+## Branch 2
+
+### Utilização de fonts adicionais
+
+- Dowload dos arqyuvos de font (formato TFF ou OTF)
+- Colocação na pasta `assets/fonts`
+- instalação da libs `expo-fonyts` e ` expo-splash`
+
+- Colocação na pasta assets\fonts
+- Instalação das libs expo-fonts e expo-splash-screen
+  Importação das fontes com auxílio dos hooks useFonts e useCallback.
+  Aplicação das fontes usando regras de StyleSheet.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
-
-###

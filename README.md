@@ -59,6 +59,20 @@ Npx significa  instalar e executar
 - site para fontes https://docs.expo.dev/versions/latest/sdk/font/
 - sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
 
+# DaHora Filmes
+
+Exemplo de app nativo multiplataforma criando com React Native e Expo.
+
+## Branch 2
+
+### Utilização de fonts adicionais
+
+- Dowload dos arqyuvos de font (formato TFF ou OTF)
+- Colocação na pasta `assets\fonts`
+- Instalação das libs `expo-fonts` e `expo-splash-screen`
+- Importação das fontes com auxílio dos hooks useFonts e useCallback.
+- Aplicação das fontes usando regras de StyleSheet.
+
 #### Fonte
 
 - Para fonte precisa instalar no node.js - npx expo install expo-font
@@ -69,23 +83,6 @@ Npx significa  instalar e executar
 - no site https://fonts.google.com/
 - escolhe a fonte e baixe no seu computador
 - coloque na pasta que fonts na assets
-
-# DaHora Filmes
-
-Exemplo de app nativo multiplataforma criando com React Native e Expo.
-
-## Branch 2
-
-### Utilização de fonts adicionais
-
-- Dowload dos arqyuvos de font (formato TFF ou OTF)
-- Colocação na pasta `assets/fonts`
-- instalação da libs `expo-fonyts` e ` expo-splash`
-
-- Colocação na pasta assets\fonts
-- Instalação das libs expo-fonts e expo-splash-screen
-  Importação das fontes com auxílio dos hooks useFonts e useCallback.
-  Aplicação das fontes usando regras de StyleSheet.
 
 ## Dica
 

@@ -24,6 +24,7 @@ export default function App() {
   /* Para fonte */
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
   /* Função atrelada ao hook useCallback. 

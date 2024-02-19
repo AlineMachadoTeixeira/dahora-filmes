@@ -64,6 +64,12 @@ Npx significa  instalar e executar
 - Para fonte precisa instalar no node.js - npx expo install expo-font
 - e para usar precisa instalar - npx expo install expo-splash-screen
 
+**Pegar fontes**
+
+- no site https://fonts.google.com/
+- escolhe a fonte e baixe no seu computador
+- coloque na pasta que fonts na assets
+
 # DaHora Filmes
 
 Exemplo de app nativo multiplataforma criando com React Native e Expo.
@@ -73,3 +79,5 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
+
+###

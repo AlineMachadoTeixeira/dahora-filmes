@@ -42,7 +42,10 @@ const estilos = StyleSheet.create({
   },
 
   textoBotao: {
+    fontFamily: "NotoSans",
     color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 
   viewRodape: {

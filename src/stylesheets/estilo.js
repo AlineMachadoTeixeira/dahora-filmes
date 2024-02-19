@@ -1,13 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   viewLogo: {
     flex: 3,
     width: "80%",

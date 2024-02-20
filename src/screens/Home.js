@@ -70,7 +70,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontFamily: "Monoton-Regular",
     fontSize: 28,
-    color: "#5a51a6",
+    color: "#a471f9",
   },
 
   viewBotoes: {
@@ -83,7 +83,7 @@ const estilos = StyleSheet.create({
 
   botao: {
     padding: 16,
-    backgroundColor: "#5451a6",
+    backgroundColor: "#a471f9",
   },
 
   textoBotao: {
@@ -95,7 +95,7 @@ const estilos = StyleSheet.create({
 
   viewRodape: {
     width: "100%",
-    backgroundColor: "#5451a6",
+    backgroundColor: "#a471f9",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",

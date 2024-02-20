@@ -81,7 +81,7 @@ const estilos = StyleSheet.create({
 
   nomeApp: {
     fontWeight: "bold",
-    color: "#5351a6",
+    color: "#a471f9",
   },
 
   viewApi: {

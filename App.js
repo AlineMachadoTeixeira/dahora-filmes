@@ -15,8 +15,16 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen name="Sobre" component={Sobre} />
+
+          <Stack.Screen name="Privacidade" component={Privacidade} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

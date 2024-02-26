@@ -84,8 +84,19 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
 - escolhe a fonte e baixe no seu computador
 - coloque na pasta que fonts na assets
 
+## Branch 3
+
+- Criação das telas básicas: Sobre e Privacidade
+- Componentes `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
+- Componente `Linking` para criação de link para a web.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
+
+reactnavigation mecanismos de navegação: Stack, Tab, Drawer, Switch, modal
+
+Expo Router
+Expo Router é uma biblioteca de roteamento de código aberto para aplicativos Universal React Native desenvolvidos com Expo.

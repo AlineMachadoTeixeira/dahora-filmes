@@ -87,7 +87,7 @@ export default function Privacidade() {
             com um dos recursos que você usa em nosso site.
           </Text>
           <Text style={estilos.texto}>
-            Esta política é efetiva a partir de Nov/2022.
+            Esta política é efetiva a partir de Nov/2024.
           </Text>
         </ScrollView>
       </View>

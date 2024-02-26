@@ -48,17 +48,6 @@ Npx significa  instalar e executar
 - ctrl C
 - para voltar `npm start` e a letra `a`
 
-#### Biblioteca de icons
-
-- https://docs.expo.dev/guides/icons/
-- faz a instalação no terminal node. Antes pare se tiver rodando
-- npm install @expo/vector-icons
-
-- site de icons https://icons.expo.fyi/Index
-
-- site para fontes https://docs.expo.dev/versions/latest/sdk/font/
-- sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
-
 # DaHora Filmes
 
 Exemplo de app nativo multiplataforma criando com React Native e Expo.
@@ -84,19 +73,49 @@ Exemplo de app nativo multiplataforma criando com React Native e Expo.
 - escolhe a fonte e baixe no seu computador
 - coloque na pasta que fonts na assets
 
+#### Biblioteca de icons
+
+- https://docs.expo.dev/guides/icons/
+- faz a instalação no terminal node. Antes pare se tiver rodando
+- npm install @expo/vector-icons
+
+- site de icons https://icons.expo.fyi/Index
+
+- site para fontes https://docs.expo.dev/versions/latest/sdk/font/
+- sie para fazer a fonte funcionar https://docs.expo.dev/versions/latest/sdk/splash-screen/
+
 ## Branch 3
 
 - Criação das telas básicas: Sobre e Privacidade
 - Componentes `ScrollView` para conteúdos maiores que a tela com suporte à rolagem
 - Componente `Linking` para criação de link para a web.
 
+## Branch 4
+
+Para gerenciar os recursos de navegação é necessário usar uma biblioteca de navegação.
+
+As mais conhecidas são a **React Navigation** **Expo Router**.
+
+Atualmente (Fevereiro/2024) a mais usada e considerada padrão é a **React Navigation**
+
+### Site oficial:
+
+- React Navigation: https://reactnavigation.org/
+- Expo Router: https://docs.expo.dev/router/introduction/
+
+### Como usar o React Navigation com navegação Stack
+
+#### Dependências
+
+React Navigation: `npm install @react-navigation/native`
+
+Dependencia para navegação:
+`npx expo install react-native-screens react-native-safe-area-context`
+
+Mecanismo de navegação Stack: `npm install @react-navigation/native-stack`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
-
-reactnavigation mecanismos de navegação: Stack, Tab, Drawer, Switch, modal
-
-Expo Router
-Expo Router é uma biblioteca de roteamento de código aberto para aplicativos Universal React Native desenvolvidos com Expo.

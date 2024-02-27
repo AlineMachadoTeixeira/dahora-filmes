@@ -5,10 +5,11 @@ import { useState } from "react";
 
 export default function BuscarFilmes() {
   const [texto, setTexto] = useState("");
-  const pesquisa = () => {
-    if (pesquisa) {
-      Alert.alert("");
+  const pesquisar = () => {
+    if (texto) {
+      Alert.alert("Você deve digitar um filme");
     } else {
+      Alert.alert("Você procurou por: ");
     }
   };
 
@@ -20,12 +21,16 @@ export default function BuscarFilmes() {
 
         <View style={estilos.pesquisa}>
           <Ionicons name="film" size={40} color="#a471f9" />
-          <TextInput style={estilos.input} placeholder="Digite o filme" />
+          <TextInput
+            style={estilos.input}
+            placeholder="Digite o filme"
+            onSubmitEditing={pesquisar}
+          />
         </View>
         <View>
           <Pressable
             style={estilos.botao}
-            onPress={pesquisa}
+            //onPress={pesquisa}
             // onSubmitEditing
           >
             <Text style={estilos.textoBotao}>PROCURAR</Text>

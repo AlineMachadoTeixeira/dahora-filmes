@@ -30,6 +30,14 @@ se vc sair com ctrl C e querer entrar novamente. Digite npx expo start ou npm st
 
 Npx significa  instalar e executar
 
+#### Instalando o axios
+
+Axios é um cliente HTTP baseado-em-promessas para o node.js e para o navegador.
+
+Pare o node antes de intalação
+
+- npm install axios
+
 #### Para usar emulador no navegador
 
 - Android Studio

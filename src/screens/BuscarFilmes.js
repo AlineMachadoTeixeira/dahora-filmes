@@ -1,36 +1,62 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Alert,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  Vibration,
+  View,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
 export default function BuscarFilmes() {
-  const [texto, setTexto] = useState("");
-  const pesquisar = () => {
-    if (texto) {
-      Alert.alert("Você deve digitar um filme");
-    } else {
-      Alert.alert("Você procurou por: ");
+  const [filme, setFilme] = useState("");
+
+  /* Capturando e registrando em state o filme que o usuário deseja pesquisar */
+  const filmeDigitado = (valorDigitado) => {
+    /* valorDigitado(nome pode ser qualquer um)  é um parametro vindo do evento onChangeText*/
+    setFilme(valorDigitado);
+  };
+
+  const buscarFilmes = () => {
+    /* Se o state filme não foi definido/indicado/preenchido */
+    if (!filme) {
+      Vibration.vibrate(500); /* Faz o celular vibrar */
+      return Alert.alert("Ops!, Você deve digitar um filme! 🎞");
     }
+
+    Alert.alert("Você procurou por:", filme);
   };
 
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <Text>Localize um filme que você viu ou gostaria de de ver!</Text>
-        <Text>Localize um filme que você viu ou gostaria de de ver!</Text>
+        <Text style={estilos.texto}>
+          Localize um filme que você viu ou gostaria de de ver!
+        </Text>
+        <Text style={estilos.texto}>
+          Localize um filme que você viu ou gostaria de de ver!
+        </Text>
 
-        <View style={estilos.pesquisa}>
+        <View style={estilos.viewForm}>
           <Ionicons name="film" size={40} color="#a471f9" />
           <TextInput
-            style={estilos.input}
+            style={estilos.campo}
             placeholder="Digite o filme"
-            onSubmitEditing={pesquisar}
+            placeholderTextColor="#a471f9"
+            maxLength={40}
+            autoFocus
+            enterKeyHint="search" /* vira uma lupa a tecla ok ou seta de correto */
+            onSubmitEditing={buscarFilmes}
+            onChangeText={filmeDigitado}
           />
         </View>
         <View>
           <Pressable
             style={estilos.botao}
-            //onPress={pesquisa}
+            onPress={buscarFilmes}
             // onSubmitEditing
           >
             <Text style={estilos.textoBotao}>PROCURAR</Text>
@@ -47,18 +73,21 @@ const estilos = StyleSheet.create({
     padding: 16,
   },
 
-  pesquisa: {
+  viewForm: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     padding: 8,
   },
-  input: {
+  campo: {
+    // flex: 0.98,
+    marginVertical: 5,
     height: 40,
     width: "85%",
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    borderColor: "#a471f9",
   },
 
   viewBotoes: {
@@ -79,5 +108,10 @@ const estilos = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 14,
     textAlign: "center",
+    color: "#fff",
+  },
+
+  texto: {
+    marginVertical: 5,
   },
 });

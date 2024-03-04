@@ -120,6 +120,15 @@ No `App.js` importamos o `NavigationContainer` e o `createNativeStackNavigator`,
 
 Em `Home`, configure os botões para navegar para as telas usando a prop `navigation` e o método `navigate`.
 
+## Branche 05
+
+### Solução: recursos utilizados
+
+- componete/Recursos nativos: `TextInput`, `Vibration` e `Alert`
+- Eventos:
+  - `onChageText` no `TextInput` para captura em tempo real do nome do filme digitando e atualização no `state` usando a função `filmesDigitado`
+  - `onSubmitEditing` no `TextInput` para acionamento da função `buscarFilmes`
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes

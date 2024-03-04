@@ -34,9 +34,7 @@ export default function BuscarFilmes({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <Text style={estilos.texto}>
-          Localize um filme que você viu ou gostaria de de ver!
-        </Text>
+        <Text style={estilos.texto}>Star wars? Poderoso Chefão? Cruella?</Text>
         <Text style={estilos.texto}>
           Localize um filme que você viu ou gostaria de de ver!
         </Text>

@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
+import CardFilme from "../components/CardFilme";
 
 /* Prop route
 Prop especial e definida pelo React Navagation. Através dela que é possivel acessar valores passandos por meio de navegação entre telas */
@@ -46,7 +47,7 @@ export default function Resultados({ route }) {
           keyExtractor={(item) => item.id}
           //Prop que irá renderizar cada item/filme em um camponente
           renderItem={({ item }) => {
-            return <Text>{item.title}</Text>;
+            return <CardFilme filme={item} />;
           }}
         />
       </View>

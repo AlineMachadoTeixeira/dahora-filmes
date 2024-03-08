@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import CardFilme from "../components/CardFilme";
 import Separador from "../components/Separador";
 import ListaVazia from "./ListaVazia";
+import Loading from "../components/Loading";
 
 /* Prop route
 Prop especial e definida pelo React Navagation. Através dela que é possivel acessar valores passandos por meio de navegação entre telas */
@@ -53,7 +54,7 @@ export default function Resultados({ route }) {
       <View style={estilos.subContainer}>
         <Text style={estilos.texto}>Você buscou por: {filme}</Text>
 
-        {loading && <ActivityIndicator size="large" color="#a471f9" />}
+        {loading && <Loading />}
 
         {!loading && (
           <View style={estilos.viewFilmes}>

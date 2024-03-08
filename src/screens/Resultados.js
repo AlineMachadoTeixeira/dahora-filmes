@@ -1,15 +1,26 @@
 //atalho: rnfs
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 import CardFilme from "../components/CardFilme";
+import Separador from "../components/Separador";
+import ListaVazia from "./ListaVazia";
 
 /* Prop route
 Prop especial e definida pelo React Navagation. Através dela que é possivel acessar valores passandos por meio de navegação entre telas */
 export default function Resultados({ route }) {
   /* State para gerenciar os resultados da busca na API */
   const [resultados, setResultados] = useState([]);
+
+  //State para gerenciar o loading (mostar/esconder)
+  const [loading, setLoading] = useState(true);
 
   // capturando o parâmetro filme vindo de buscarFilmes
   const { filme } = route.params;
@@ -27,6 +38,9 @@ export default function Resultados({ route }) {
         });
         /* Adicionando os resultados ao state */
         setResultados(resposta.data.results);
+
+        /* Desativamos o loading */
+        setLoading(false);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }
@@ -39,19 +53,25 @@ export default function Resultados({ route }) {
       <View style={estilos.subContainer}>
         <Text style={estilos.texto}>Você buscou por: {filme}</Text>
 
-        <View style={estilos.viewFilmes}></View>
-        <FlatList
-          //Prop data apontando para state contendo os dados para FlatList
-          data={resultados}
-          //Extraindo a chave/key de cada registro/item/filme único
-          keyExtractor={(item) => item.id}
-          //Prop que irá renderizar cada item/filme em um camponente
-          renderItem={({ item }) => {
-            return <CardFilme filme={item} />;
-          }}
-          ListEmptyComponent={() => <Text>Nenhum filme localizado</Text>}
-          ItemSeparatorComponent={() => <Text>*******</Text>}
-        />
+        {loading && <ActivityIndicator size="large" color="#a471f9" />}
+
+        {!loading && (
+          <View style={estilos.viewFilmes}>
+            <FlatList
+              //Prop data apontando para state contendo os dados para FlatList
+              data={resultados}
+              //Extraindo a chave/key de cada registro/item/filme único
+              keyExtractor={(item) => item.id}
+              //Prop que irá renderizar cada item/filme em um camponente
+              renderItem={({ item }) => {
+                return <CardFilme filme={item} />;
+              }}
+              // ListEmptyComponent={() => <Text>Nenhum filme localizado</Text>}
+              ListEmptyComponent={ListaVazia}
+              ItemSeparatorComponent={Separador}
+            />
+          </View>
+        )}
       </View>
     </SafeContainer>
   );

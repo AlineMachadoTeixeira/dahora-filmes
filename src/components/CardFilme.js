@@ -2,12 +2,20 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 
-export default function CardFilme() {
+export default function CardFilme({ filme }) {
+  /*  //poster_path é o nome dado pela api    
+    Extraindo as informações do filme (titulo e imagem de capa) */
+  const { title, poster_path } = filme;
   return (
     <View style={estilos.card}>
-      <Image style={estilos.imagem} source={imagemAlternativa} />
+      <Image
+        /* Imagem ficou ruim user resizeMode testa as opções */
+        resizeMode="cover"
+        style={estilos.imagem}
+        source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
+      />
       <View style={estilos.corpo}>
-        <Text style={estilos.titulo}>Nome do Filme</Text>
+        <Text style={estilos.titulo}>{title}</Text>
         <View style={estilos.botoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>Leia mais</Text>
@@ -23,7 +31,7 @@ export default function CardFilme() {
 
 const estilos = StyleSheet.create({
   card: {
-    marginVertical: 4,
+    marginVertical: 8,
     flexDirection: "row",
     borderWidth: 2,
     borderColor: "#a471f9",
@@ -43,7 +51,7 @@ const estilos = StyleSheet.create({
     color: "white",
     textAlign: "center",
     paddingVertical: 8,
-    fontSize: 16,
+    fontSize: 14,
   },
   botoes: {
     flexDirection: "row",

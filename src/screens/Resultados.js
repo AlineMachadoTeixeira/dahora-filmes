@@ -49,6 +49,8 @@ export default function Resultados({ route }) {
           renderItem={({ item }) => {
             return <CardFilme filme={item} />;
           }}
+          ListEmptyComponent={() => <Text>Nenhum filme localizado</Text>}
+          ItemSeparatorComponent={() => <Text>*******</Text>}
         />
       </View>
     </SafeContainer>

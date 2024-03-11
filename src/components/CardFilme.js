@@ -1,6 +1,8 @@
 // atalho rnfs
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
+import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function CardFilme({ filme }) {
   /*  //poster_path é o nome dado pela api    
@@ -12,16 +14,24 @@ export default function CardFilme({ filme }) {
         /* Imagem ficou ruim user resizeMode testa as opções */
         resizeMode="cover"
         style={estilos.imagem}
-        source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
+        source={
+          poster_path
+            ? { uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }
+            : imagemAlternativa
+        }
       />
       <View style={estilos.corpo}>
         <Text style={estilos.titulo}>{title}</Text>
         <View style={estilos.botoes}>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Leia mais</Text>
+            <Text style={estilos.textoBotao}>
+              <Feather name="book-open" size={15} color="#a471f9" /> Leia mais
+            </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Salvar</Text>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="add-circle" size={15} color="#a471f9" /> Salvar
+            </Text>
           </Pressable>
         </View>
       </View>

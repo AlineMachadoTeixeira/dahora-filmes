@@ -9,20 +9,51 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 
-export default function Detalhes() {
+export default function Detalhes({ route }) {
+  const { filme } = route.params;
+
+  const {
+    title,
+    overview,
+    release_date,
+    vote_average,
+    backdrop_path, // da para fazer assim backdrop_path: imagem  para usar um apelido para a imagem
+  } = filme;
+
+  console.log(filme);
+
+  const formataData = (data) => {
+    /* "Quebramos (split)" a data em pedaço (ano, mes, dia) */
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <ImageBackground style={estilos.imagemFundo} source={imagemAlternativa}>
-          <Text style={estilos.titulo}>Título filme...</Text>
+        <ImageBackground
+          style={estilos.imagemFundo}
+          source={
+            backdrop_path
+              ? { uri: `https://image.tmdb.org/t/p/original/${backdrop_path}` }
+              : imagemAlternativa
+          }
+        >
+          {/* Título filme... */}
+          <Text style={estilos.titulo}> {title}</Text>
         </ImageBackground>
         <View style={estilos.conteudo}>
-          <ScrollView>
-            <Text style={[estilos.texto, estilos.avaliacao]}>Avaliação...</Text>
-            <Text style={[estilos.texto, estilos.lancamento]}>
-              Lançamento...
+          <ScrollView showsHorizontalScrollIndicator={false}>
+            {/* Avaliação... */}
+            <Text style={[estilos.texto, estilos.avaliacao]}>
+              Avaliação: {vote_average.toFixed(2)}
             </Text>
-            <Text style={[estilos.texto, estilos.descricao]}>Descrição...</Text>
+            {/* Lançamento... */}
+            <Text style={[estilos.texto, estilos.lancamento]}>
+              Lançamento: {formataData(release_date)}
+            </Text>
+            {/* Descrição... */}
+            <Text style={[estilos.texto, estilos.descricao]}>{overview}</Text>
           </ScrollView>
         </View>
       </View>
@@ -62,6 +93,7 @@ const estilos = StyleSheet.create({
   },
   lancamento: {
     color: "darkblue",
+    fontSize: 14,
   },
   descricao: {
     color: "gray",

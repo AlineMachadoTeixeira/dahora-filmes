@@ -31,7 +31,8 @@ export default function CardFilme({ filme }) {
         <View style={estilos.botoes}>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Detalhes")}
+            /* Esse filme é do detalhe para puxa da api avaliação titulo descrição e etc */
+            onPress={() => navigation.navigate("Detalhes", { filme })}
           >
             <Text style={estilos.textoBotao}>
               <Feather name="book-open" size={15} color="#a471f9" /> Leia mais

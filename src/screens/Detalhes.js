@@ -50,10 +50,17 @@ export default function Detalhes({ route }) {
             </Text>
             {/* Lançamento... */}
             <Text style={[estilos.texto, estilos.lancamento]}>
-              Lançamento: {formataData(release_date)}
+              Lançamento:
+              {release_date ? formataData(release_date) : " Indispinível"}
             </Text>
             {/* Descrição... */}
-            <Text style={[estilos.texto, estilos.descricao]}>{overview}</Text>
+            <Text style={[estilos.texto, estilos.descricao]}>
+              {overview || (
+                <Text style={{ fontStyle: "italic" }}>
+                  "Filme sem descrição"
+                </Text>
+              )}
+            </Text>
           </ScrollView>
         </View>
       </View>

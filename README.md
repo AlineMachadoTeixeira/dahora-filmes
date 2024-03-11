@@ -151,7 +151,13 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
 #### Exibição dos resultados
 
 - Utilização do componente FlatList para listagem dinâmica dos resultados
-  Criação do componente CardFilme com uso de prop (filme) com carregamento do title e do poster_path (imagem) de cada filme.
+- Criação do componente CardFilme com uso de prop (filme) com carregamento do title e do poster_path (imagem) de cada filme.
+
+## Branche 07
+
+- Loading usando `ActivityIndicador`
+- Em `Resultados`, aplicamos à `FlatList` componentes personali para caso de não haver filmes na busca (`NaoEncontrado\ListEmptyComponent`) e para separar cada elemento da `Flatlist`(`separador\ItemSeparatorComponent`)
+- Em `CardFilme` colocamos uma condicional para carregamento de imagem alternativa caso algum filme não tenha imagem, e também ´cone nos botões.
 
 ## Dica
 

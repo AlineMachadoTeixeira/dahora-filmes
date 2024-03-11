@@ -157,7 +157,12 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
 
 - Loading usando `ActivityIndicador`
 - Em `Resultados`, aplicamos à `FlatList` componentes personali para caso de não haver filmes na busca (`NaoEncontrado\ListEmptyComponent`) e para separar cada elemento da `Flatlist`(`separador\ItemSeparatorComponent`)
-- Em `CardFilme` colocamos uma condicional para carregamento de imagem alternativa caso algum filme não tenha imagem, e também ´cone nos botões.
+- Em `CardFilme` colocamos uma condicional para carregamento de imagem alternativa caso algum filme não tenha imagem, e também ´icones nos botões.
+
+## Branche 08
+
+- criação da tela `Detalhe` e adição dela à `Stack` em `App.js`
+- Em `cardFilme`, utilização do hook `useNavigation` para funcionalidade de navegação do botão **Leia mais**
 
 ## Dica
 

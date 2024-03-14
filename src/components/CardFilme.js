@@ -1,5 +1,5 @@
 // atalho rnfs
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { Feather, Ionicons } from "@expo/vector-icons";
 
@@ -13,6 +13,24 @@ export default function CardFilme({ filme }) {
 
   /* Acessar recursos de navegação */
   const navigation = useNavigation();
+
+  const salvar = async () => {
+    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage */
+
+    /* 2) Verificar/criar uma lista de filmes favoritos (dados) */
+
+    /* 3) Verificar se já tem algum filme na lista */
+
+    /* 4) Se o filme não estiver na lista, então vamos colocá-lo */
+
+    /* 5) Usamos o asyncStorage  para gravar no armazenamento offline do dispositivo*/
+
+    try {
+    } catch (error) {
+      console.log("Error: " + error);
+      Alert.alert("Erro", "Ocorreu um erro ao salvar o filme");
+    }
+  };
 
   return (
     <View style={estilos.card}>
@@ -38,7 +56,7 @@ export default function CardFilme({ filme }) {
               <Feather name="book-open" size={15} color="#a471f9" /> Leia mais
             </Text>
           </Pressable>
-          <Pressable style={estilos.botao}>
+          <Pressable style={estilos.botao} onPress={salvar}>
             <Text style={estilos.textoBotao}>
               <Ionicons name="add-circle" size={15} color="#a471f9" /> Salvar
             </Text>

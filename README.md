@@ -165,6 +165,12 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
 - Em `cardFilme`, utilização do hook `useNavigation` para funcionalidade de navegação do botão **Leia mais**
 - Em `App.js` na `Stack.Screen Datalhes`, adicionamos uma prop `options` configurada para exibir um `Button` responsável por permitir a navegação direta para `Home`.
 
+## Branche 09
+
+### REcurso nativo/lib: AsyncStorage
+
+`AsyncStorage` é uma lib mantida pela equipe do Expo que permite armazenar dados **offline** em formato de `string` no dispositivo do usuário. É uma lib semelhante à API Web `localStorage` usada em sites.
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes

@@ -16,10 +16,13 @@ export default function CardFilme({ filme }) {
   const navigation = useNavigation();
 
   const salvar = async () => {
-    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage. Usamos o getItem do AsyncStorage para analisar se existe um armazenamento a const filmeFavoritos. Se não existir, será criado posteriormente*/
+    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage.
+    Usamos o getItem do AsyncStorage para analisar se existe um armazenamento a const filmeFavoritos. Se não existir, será criado posteriormente*/
     const filmesFavoritos = await AsyncStorage.getItem("@favoritosaline");
 
-    /* 2) Verificar/criar uma lista de filmes favoritos (dados) */
+    /* 2) Verificar/criar uma lista de filmes favoritos (dados).
+    Se filmesFavoritos existir (ou seja, tem dados no storage), pegamos estes dados (strings) e convertemos em objeto (JSON.parse). Caso contrário, listaDeFilmes será um array vazio */
+    const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : [];
 
     /* 3) Verificar se já tem algum filme na lista */
 

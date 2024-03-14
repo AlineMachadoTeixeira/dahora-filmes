@@ -22,7 +22,10 @@ export default function Home({ navigation }) {
             Buscar Filmes
           </Text>
         </Pressable>
-        <Pressable style={estilos.botao}>
+        <Pressable
+          style={estilos.botao}
+          onPress={() => navigation.navigate("Favoritos")}
+        >
           <View
             style={{
               flexDirection: "row",

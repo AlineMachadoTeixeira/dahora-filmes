@@ -5,6 +5,7 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 
 /* Hook necessario pois não estamos em uma tela com acesso à prop navigation */
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CardFilme({ filme }) {
   /*  //poster_path é o nome dado pela api    
@@ -15,7 +16,8 @@ export default function CardFilme({ filme }) {
   const navigation = useNavigation();
 
   const salvar = async () => {
-    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage */
+    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage. Usamos o getItem do AsyncStorage para analisar se existe um armazenamento a const filmeFavoritos. Se não existir, será criado posteriormente*/
+    const filmesFavoritos = await AsyncStorage.getItem("@favoritosaline");
 
     /* 2) Verificar/criar uma lista de filmes favoritos (dados) */
 

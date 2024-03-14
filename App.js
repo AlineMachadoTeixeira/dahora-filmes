@@ -1,5 +1,5 @@
 /* rnfs escola esse antes de começar  e tire alguma coisas e mude outras */
-import { StatusBar } from "react-native";
+import { Button, StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -47,7 +47,22 @@ export default function App() {
 
           <Stack.Screen name="Resultados" component={Resultados} />
 
-          <Stack.Screen name="Detalhes" component={Detalhes} />
+          <Stack.Screen
+            name="Detalhes"
+            component={Detalhes}
+            options={({ navigation }) => {
+              return {
+                headerRight: () => (
+                  <Button
+                    // color="black"
+                    color="rgba(0,0,0,0.75)"
+                    onPress={() => navigation.navigate("Home")}
+                    title="Home"
+                  />
+                ),
+              };
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

@@ -163,6 +163,7 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
 
 - criação da tela `Detalhe` e adição dela à `Stack` em `App.js`
 - Em `cardFilme`, utilização do hook `useNavigation` para funcionalidade de navegação do botão **Leia mais**
+- Em `App.js` na `Stack.Screen Datalhes`, adicionamos uma prop `options` configurada para exibir um `Button` responsável por permitir a navegação direta para `Home`.
 
 ## Dica
 

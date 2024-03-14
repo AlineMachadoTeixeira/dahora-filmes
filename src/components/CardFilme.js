@@ -25,34 +25,40 @@ export default function CardFilme({ filme }) {
   const navigation = useNavigation();
 
   const salvar = async () => {
-    /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage.
+    try {
+      /* 1) Verificar/carregar os favoritos armazenados no AsyncStorage.
     Usamos o getItem do AsyncStorage para analisar se existe um armazenamento a const filmeFavoritos. Se não existir, será criado posteriormente*/
-    const filmesFavoritos = await AsyncStorage.getItem("@favoritosaline");
+      const filmesFavoritos = await AsyncStorage.getItem("@favoritosaline");
 
-    /* 2) Verificar/criar uma lista de filmes favoritos (dados).
+      /* 2) Verificar/criar uma lista de filmes favoritos (dados).
     Se filmesFavoritos existir (ou seja, tem dados no storage), pegamos estes dados (strings) e convertemos em objeto (JSON.parse). Caso contrário, listaDeFilmes será um array vazio */
-    const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : [];
+      const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : [];
 
-    /* 3) Verificar se já tem algum filme na lista 
+      /* 3) Verificar se já tem algum filme na lista 
     Usamos a função some() para avaliar se o ID do filme dentro da listaDeFilmes é o mesmo de um filme exibido na tela do app (nos Cards). Se for, retorna TRUE indicando que o filme já foi salvo em algum momento. Caso contrário, retorna FALSE indicando que o filme ainda não foi salvo
     */
-    const jaTemFilme = listaDeFilmes.some((filmeNaLista) => {
-      return filmeNaLista.id === filme.id;
-    });
+      const jaTemFilme = listaDeFilmes.some((filmeNaLista) => {
+        return filmeNaLista.id === filme.id;
+      });
 
-    /* 4) Verificação, altera e registro do filme*/
-    /* 4.1) Se já tem filme, avisaremos ao usuário */
-    if (jaTemFilme) {
-      Alert.alert("Ops!", "Você já salvou este filme!");
-      Vibration.vibrate();
-      return;
-    }
+      /* 4) Verificação, altera e registro do filme*/
+      /* 4.1) Se já tem filme, avisaremos ao usuário */
+      if (jaTemFilme) {
+        Alert.alert("Ops!", "Você já salvou este filme!");
+        Vibration.vibrate();
+        return;
+      }
 
-    /* 4.2) Senão, vamos colocar na lista */
-    listaDeFilmes.push(filme);
+      /* 4.2) Senão, vamos colocar na lista */
+      listaDeFilmes.push(filme);
 
-    /* 5) Usamos o asyncStorage  para gravar no armazenamento offline do dispositivo*/
-    try {
+      /* 5) Usamos o asyncStorage  para gravar no armazenamento offline do dispositivo*/
+      await AsyncStorage.setItem(
+        "@favoritosaline",
+        JSON.stringify(listaDeFilmes)
+      );
+
+      Alert.alert("Favoritos", `${title} foi salvo com sucesso`);
     } catch (error) {
       console.log("Error: " + error);
       Alert.alert("Erro", "Ocorreu um erro ao salvar o filme");

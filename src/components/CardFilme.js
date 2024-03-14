@@ -1,5 +1,13 @@
 // atalho rnfs
-import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  Vibration,
+  View,
+} from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { Feather, Ionicons } from "@expo/vector-icons";
 
@@ -8,6 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function CardFilme({ filme }) {
+  // console.log(filme.title, filme.poster_path);
   /*  //poster_path é o nome dado pela api    
     Extraindo as informações do filme (titulo e imagem de capa) */
   const { title, poster_path } = filme;
@@ -24,12 +33,25 @@ export default function CardFilme({ filme }) {
     Se filmesFavoritos existir (ou seja, tem dados no storage), pegamos estes dados (strings) e convertemos em objeto (JSON.parse). Caso contrário, listaDeFilmes será um array vazio */
     const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : [];
 
-    /* 3) Verificar se já tem algum filme na lista */
+    /* 3) Verificar se já tem algum filme na lista 
+    Usamos a função some() para avaliar se o ID do filme dentro da listaDeFilmes é o mesmo de um filme exibido na tela do app (nos Cards). Se for, retorna TRUE indicando que o filme já foi salvo em algum momento. Caso contrário, retorna FALSE indicando que o filme ainda não foi salvo
+    */
+    const jaTemFilme = listaDeFilmes.some((filmeNaLista) => {
+      return filmeNaLista.id === filme.id;
+    });
 
-    /* 4) Se o filme não estiver na lista, então vamos colocá-lo */
+    /* 4) Verificação, altera e registro do filme*/
+    /* 4.1) Se já tem filme, avisaremos ao usuário */
+    if (jaTemFilme) {
+      Alert.alert("Ops!", "Você já salvou este filme!");
+      Vibration.vibrate();
+      return;
+    }
+
+    /* 4.2) Senão, vamos colocar na lista */
+    listaDeFilmes.push(filme);
 
     /* 5) Usamos o asyncStorage  para gravar no armazenamento offline do dispositivo*/
-
     try {
     } catch (error) {
       console.log("Error: " + error);

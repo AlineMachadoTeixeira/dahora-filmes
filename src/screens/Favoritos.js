@@ -53,6 +53,13 @@ export default function Favoritos({ navigation }) {
         {
           text: "Sim, manda ver",
           style: "destructive", // confirma que vai apagar
+          onPress: async () => {
+            //Removemos nossos storage de favoritos
+            await AsyncStorage.removeItem("@favoritosaline");
+
+            //Atualizamos o state para sejam removidos da tela
+            setListaFavoritos([]);
+          },
         },
       ]
     );

@@ -37,7 +37,26 @@ export default function Favoritos({ navigation }) {
   }, []);
 
   //log no state
-  console.log(listaFavoritos);
+  // console.log(listaFavoritos);
+
+  const excluirTodosFavoritos = async () => {
+    Alert.alert(
+      "Excluir TODODS?",
+      "Tem certeza que deseja excluir TODOS os favoritos",
+      [
+        /* propriedade style (aparência do botão) SOMENTE no IOS que faz a diferencia deixa azul e vermelho */
+        {
+          text: "Cancelar",
+          style: "cancel", // cancela, pois está em duvida se quer apagar
+        },
+
+        {
+          text: "Sim, manda ver",
+          style: "destructive", // confirma que vai apagar
+        },
+      ]
+    );
+  };
 
   return (
     <SafeContainer>
@@ -45,7 +64,10 @@ export default function Favoritos({ navigation }) {
         <View style={estilos.viewFavorito}>
           <Text style={estilos.texto}>Quantidade: {listaFavoritos.length}</Text>
 
-          <Pressable style={estilos.botaoExcluirFavorito}>
+          <Pressable
+            onPress={excluirTodosFavoritos}
+            style={estilos.botaoExcluirFavorito}
+          >
             <Text style={estilos.textoBotao}>
               <Ionicons name="trash-outline" size={16} /> Excluir favoritos
             </Text>

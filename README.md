@@ -171,6 +171,32 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
 
 `AsyncStorage` é uma lib mantida pela equipe do Expo que permite armazenar dados **offline** em formato de `string` no dispositivo do usuário. É uma lib semelhante à API Web `localStorage` usada em sites.
 
+## Branche 10
+
+### Roteiro geral para o build usando o Expo EAS
+
+1. Acessar a sua conta Expo e criar um projeto no Expo EAS: https://expo.dev
+2. instalar o eas-cli
+3. Adicionar o id do projeto ao aplicativo (isso modificará o arquivo `app.json`)
+4. Varificar a conta logada: `npx eas whoami`
+
+- 4.1. Se não estiver logado, use: `npx eas login`
+- 4.2 Se tiver logado e quiser deslogar (ou trocar de usuário), use `eas logout`
+
+5. configure o build (compilação) `eas build:configure` se der erro `npx eas build:configure`
+6. escolha Android e dê enter. Isso criará um arquivo chamado `eas.json` mude esse arquivo/pasta
+7. É necessário modificar o segmaento `preview` dentro do `eas.json`, adcionar o código abaixo
+
+```json
+"developmentClient" : true,
+    "android" : {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+    },
+```
+
+8. Iniciar o processo de build/compilação: `eas build --profile preview` n
+
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes

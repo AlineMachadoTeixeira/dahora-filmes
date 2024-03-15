@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-dahora.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "package": "com.alineteixeira.dahorafilmes"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bb96ee36-d8ba-4a0a-9022-377cc4d8470b"
+      }
+    },
+    "owner": "alineteixeira"
   }
 }

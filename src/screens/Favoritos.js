@@ -65,20 +65,60 @@ export default function Favoritos({ navigation }) {
     );
   };
 
+  const excluir = async (idFilme) => {
+    Alert.alert(
+      "Excluir filme",
+      "Tem certeza que deseja excluir este filme dos favoritos?",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+        {
+          text: "Sim",
+          onPress: async () => {
+            /* Gerar uma nova lista de favoritos EXCETO o filme que será removido */
+            const novaListaDeFavoritos = listaFavoritos.filter(
+              (filmeDaLista) => filmeDaLista.id !== idFilme
+            );
+
+            Alert.alert(
+              "Filme excluído",
+              "O filme foi removido dos favoritos com sucesso."
+            );
+
+            // Adicione este alerta para confirmar a exclusão do filme
+
+            setListaFavoritos(novaListaDeFavoritos);
+
+            /* /* Atualiza o storage com os dados da nova lista SEM o filme removido */
+
+            await AsyncStorage.setItem(
+              "@favoritosaline",
+              JSON.stringify(novaListaDeFavoritos)
+            );
+          },
+        },
+      ]
+    );
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
         <View style={estilos.viewFavorito}>
           <Text style={estilos.texto}>Quantidade: {listaFavoritos.length}</Text>
 
-          <Pressable
-            onPress={excluirTodosFavoritos}
-            style={estilos.botaoExcluirFavorito}
-          >
-            <Text style={estilos.textoBotao}>
-              <Ionicons name="trash-outline" size={16} /> Excluir favoritos
-            </Text>
-          </Pressable>
+          {listaFavoritos.length > 0 && (
+            <Pressable
+              onPress={excluirTodosFavoritos}
+              style={estilos.botaoExcluirFavorito}
+            >
+              <Text style={estilos.textoBotao}>
+                <Ionicons name="trash-outline" size={16} /> Excluir favoritos
+              </Text>
+            </Pressable>
+          )}
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -94,7 +134,10 @@ export default function Favoritos({ navigation }) {
                   <Text style={estilos.titulo}>{filme.title}</Text>
                 </Pressable>
 
-                <Pressable style={estilos.botaoExcluir}>
+                <Pressable
+                  onPress={() => excluir(filme.id)}
+                  style={estilos.botaoExcluir}
+                >
                   <Text>
                     <Ionicons name="trash" size={16} color="white" />
                   </Text>
@@ -141,7 +184,7 @@ const estilos = StyleSheet.create({
     padding: 8,
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#eee8fc",
+    backgroundColor: "#f2e7ff",
     marginBottom: 8,
     borderRadius: 4,
     alignItems: "center",

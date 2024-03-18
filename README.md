@@ -218,3 +218,15 @@ Analisar: npx expo-doctor@latest
 Atualizar: npx expo install --fix
 
 Fazer novo build: eas build --profile preview
+
+#### Fazer teste localmente depois que já fez a Branche 10
+
+npm start
+
+coloque o letra S (antes era a letra A )
+
+depois use o qr-code
+
+escolha expo ro no seu celular
+
+Dica pode fazer o build no final.

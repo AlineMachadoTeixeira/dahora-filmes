@@ -195,10 +195,26 @@ Em `Home`, configure os botões para navegar para as telas usando a prop `naviga
     },
 ```
 
-8. Iniciar o processo de build/compilação: `eas build --profile preview` n
+8. Analisar os pacotes do projeto e outros possíveis problema: `npx -y expo-doctor`. Se sinalizar pacotes desatualizados, execute: `npx expo install --fix`. Se sinalizar outros problemas (nas imagens por exemplo), corrija.
+
+9. Adicionar ao `eas.json` dentro de `preview` a API key de acordo com o conteúdo do arquivo `.env`:
+
+```json
+"env": {
+  "EXPO_PUBLIC_NOME_ENV": "VALOE"
+}  //isso está na pasta  eas.json linha 18
+```
+
+10. Iniciar o processo de build/compilação: `eas build --profile preview`
 
 ## Dica
 
 Instale a extensão **ES7+ React** no VS Code para facilitar a programação de componentes
 
 https://encycolorpedia.pt/search?upload=70418cc38d78aef11636c06c25fe4cf632d96c9ab9f48f63e0
+
+Analisar: npx expo-doctor@latest
+
+Atualizar: npx expo install --fix
+
+Fazer novo build: eas build --profile preview
